@@ -40,6 +40,17 @@
                 Users
               </v-tab-item>
 
+              <v-tab-item href="#mobile-tabs-7-4" ripple slot="activators">
+                Sessions
+              </v-tab-item>
+
+              <v-tab-item href="#mobile-tabs-7-5" ripple slot="activators">
+                Roles
+              </v-tab-item>
+
+              <v-tab-item href="#mobile-tabs-7-6" ripple slot="activators">
+                Files
+              </v-tab-item>
 
 
               <v-tab-content id="mobile-tabs-7-1"  slot="content">
@@ -454,6 +465,383 @@
                   </v-card-row>
                 </v-card>
               </v-tab-content>
+
+              <v-tab-content id="mobile-tabs-7-4" slot="content">
+                <v-card>
+                  <v-card-row>
+                    <v-card-title>
+                      <span>Signing Up</span>
+                      <v-spacer></v-spacer>
+                    </v-card-title>
+                  </v-card-row>
+                  <v-card-text>
+                    <v-card-row>
+                      <v-icon class="mr-5">code</v-icon>
+                      <div>
+                        <div>/parse/users</div>
+                        <div>{{ body.signingUp }}</div>
+                        <div>{{ response.signingUp }}</div>
+                        <br>
+                        <v-text-input label="Username" v-model="body.signingUp.username"></v-text-input>
+                        <v-text-input label="Password" v-model="body.signingUp.password"></v-text-input>
+                      </div>
+                    </v-card-row>
+                  </v-card-text>
+                  <v-card-row actions>
+                    <v-btn flat v-on:click.native="signingUp">Signing Up</v-btn>
+                    <v-btn flat v-on:click.native="signingUpFacebook">Signing Up Facebook</v-btn>
+                  </v-card-row>
+                </v-card>
+
+
+
+                <v-card>
+                  <v-card-row>
+                    <v-card-title>
+                      <span>Logging In</span>
+                      <v-spacer></v-spacer>
+                    </v-card-title>
+                  </v-card-row>
+                  <v-card-text>
+                    <v-card-row>
+                      <v-icon class="mr-5">code</v-icon>
+                      <div>
+                        <div>/parse/users</div>
+                        <div>{{ body.loggingIn }}</div>
+                        <div>{{ response.loggingIn }}</div>
+                        <br>
+                        <v-text-input label="Username" v-model="body.loggingIn.username"></v-text-input>
+                        <v-text-input label="Password" v-model="body.loggingIn.password"></v-text-input>
+                      </div>
+                    </v-card-row>
+                  </v-card-text>
+                  <v-card-row actions>
+                    <v-btn flat v-on:click.native="loggingIn">Logging In</v-btn>
+                    <v-btn flat v-on:click.native="loggingInFacebook">Logging In Facebook</v-btn>
+                  </v-card-row>
+                </v-card>
+
+
+                <v-card>
+                  <v-card-row>
+                    <v-card-title>
+                      <span>Updating(PUT) Objects</span>
+                      <v-spacer></v-spacer>
+                    </v-card-title>
+                  </v-card-row>
+                  <v-card-text>
+                    <v-card-row>
+                      <v-icon class="mr-5">code</v-icon>
+                      <div>
+                        <div>/parse/classes/GameScore/{{ response.creatingObjects.objectId }}</div>
+                        <div>{{ body.updatingObjects }}</div>
+                        <div>{{ response.updatingObjects }}</div>
+                      </div>
+                    </v-card-row>
+                  </v-card-text>
+                  <v-card-row actions>
+                    <v-btn flat v-on:click.native="updatingObjects">Updating</v-btn>
+                  </v-card-row>
+                </v-card>
+
+
+
+                <v-card>
+                  <v-card-row>
+                    <v-card-title>
+                      <span>Deleting(PUT) Objects</span>
+                      <v-spacer></v-spacer>
+                    </v-card-title>
+                  </v-card-row>
+                  <v-card-text>
+                    <v-card-row>
+                      <v-icon class="mr-5">code</v-icon>
+                      <div>
+                        <div>/parse/classes/GameScore/{{ response.creatingObjects.objectId }}</div>
+                        <div>{{ body.deletingObjects }}</div>
+                        <div>{{ response.deletingObjects }}</div>
+                      </div>
+                    </v-card-row>
+                  </v-card-text>
+                  <v-card-row actions>
+                    <v-btn flat v-on:click.native="deletingObjects">Deleting</v-btn>
+                  </v-card-row>
+                </v-card>
+
+
+
+                <v-card>
+                  <v-card-row>
+                    <v-card-title>
+                      <span>Batch Operations</span>
+                      <v-spacer></v-spacer>
+                    </v-card-title>
+                  </v-card-row>
+                  <v-card-text>
+                    <v-card-row>
+                      <v-icon class="mr-5">code</v-icon>
+                      <div>
+                        <div>/parse/batch</div>
+                        <div>{{ body.batchOperations }}</div>
+                        <div>{{ response.batchOperations }}</div>
+                      </div>
+                    </v-card-row>
+                  </v-card-text>
+                  <v-card-row actions>
+                    <v-btn flat v-on:click.native="batchOperations">Batch</v-btn>
+                  </v-card-row>
+                </v-card>
+              </v-tab-content>
+
+              <v-tab-content id="mobile-tabs-7-5" slot="content">
+                <v-card>
+                  <v-card-row>
+                    <v-card-title>
+                      <span>Signing Up</span>
+                      <v-spacer></v-spacer>
+                    </v-card-title>
+                  </v-card-row>
+                  <v-card-text>
+                    <v-card-row>
+                      <v-icon class="mr-5">code</v-icon>
+                      <div>
+                        <div>/parse/users</div>
+                        <div>{{ body.signingUp }}</div>
+                        <div>{{ response.signingUp }}</div>
+                        <br>
+                        <v-text-input label="Username" v-model="body.signingUp.username"></v-text-input>
+                        <v-text-input label="Password" v-model="body.signingUp.password"></v-text-input>
+                      </div>
+                    </v-card-row>
+                  </v-card-text>
+                  <v-card-row actions>
+                    <v-btn flat v-on:click.native="signingUp">Signing Up</v-btn>
+                    <v-btn flat v-on:click.native="signingUpFacebook">Signing Up Facebook</v-btn>
+                  </v-card-row>
+                </v-card>
+
+
+
+                <v-card>
+                  <v-card-row>
+                    <v-card-title>
+                      <span>Logging In</span>
+                      <v-spacer></v-spacer>
+                    </v-card-title>
+                  </v-card-row>
+                  <v-card-text>
+                    <v-card-row>
+                      <v-icon class="mr-5">code</v-icon>
+                      <div>
+                        <div>/parse/users</div>
+                        <div>{{ body.loggingIn }}</div>
+                        <div>{{ response.loggingIn }}</div>
+                        <br>
+                        <v-text-input label="Username" v-model="body.loggingIn.username"></v-text-input>
+                        <v-text-input label="Password" v-model="body.loggingIn.password"></v-text-input>
+                      </div>
+                    </v-card-row>
+                  </v-card-text>
+                  <v-card-row actions>
+                    <v-btn flat v-on:click.native="loggingIn">Logging In</v-btn>
+                    <v-btn flat v-on:click.native="loggingInFacebook">Logging In Facebook</v-btn>
+                  </v-card-row>
+                </v-card>
+
+
+                <v-card>
+                  <v-card-row>
+                    <v-card-title>
+                      <span>Updating(PUT) Objects</span>
+                      <v-spacer></v-spacer>
+                    </v-card-title>
+                  </v-card-row>
+                  <v-card-text>
+                    <v-card-row>
+                      <v-icon class="mr-5">code</v-icon>
+                      <div>
+                        <div>/parse/classes/GameScore/{{ response.creatingObjects.objectId }}</div>
+                        <div>{{ body.updatingObjects }}</div>
+                        <div>{{ response.updatingObjects }}</div>
+                      </div>
+                    </v-card-row>
+                  </v-card-text>
+                  <v-card-row actions>
+                    <v-btn flat v-on:click.native="updatingObjects">Updating</v-btn>
+                  </v-card-row>
+                </v-card>
+
+
+
+                <v-card>
+                  <v-card-row>
+                    <v-card-title>
+                      <span>Deleting(PUT) Objects</span>
+                      <v-spacer></v-spacer>
+                    </v-card-title>
+                  </v-card-row>
+                  <v-card-text>
+                    <v-card-row>
+                      <v-icon class="mr-5">code</v-icon>
+                      <div>
+                        <div>/parse/classes/GameScore/{{ response.creatingObjects.objectId }}</div>
+                        <div>{{ body.deletingObjects }}</div>
+                        <div>{{ response.deletingObjects }}</div>
+                      </div>
+                    </v-card-row>
+                  </v-card-text>
+                  <v-card-row actions>
+                    <v-btn flat v-on:click.native="deletingObjects">Deleting</v-btn>
+                  </v-card-row>
+                </v-card>
+
+
+
+                <v-card>
+                  <v-card-row>
+                    <v-card-title>
+                      <span>Batch Operations</span>
+                      <v-spacer></v-spacer>
+                    </v-card-title>
+                  </v-card-row>
+                  <v-card-text>
+                    <v-card-row>
+                      <v-icon class="mr-5">code</v-icon>
+                      <div>
+                        <div>/parse/batch</div>
+                        <div>{{ body.batchOperations }}</div>
+                        <div>{{ response.batchOperations }}</div>
+                      </div>
+                    </v-card-row>
+                  </v-card-text>
+                  <v-card-row actions>
+                    <v-btn flat v-on:click.native="batchOperations">Batch</v-btn>
+                  </v-card-row>
+                </v-card>
+              </v-tab-content>
+
+              <v-tab-content id="mobile-tabs-7-6" slot="content">
+                <v-card>
+                  <v-card-row>
+                    <v-card-title>
+                      <span>Uploading Files</span>
+                      <v-spacer></v-spacer>
+                    </v-card-title>
+                  </v-card-row>
+                  <v-card-text>
+                    <v-card-row>
+                      <v-icon class="mr-5">code</v-icon>
+                      <div>
+                        <div>/parse/files/hello.txt</div>
+                        <div>{{ body.uploadingFiles }}</div>
+                        <div>{{ response.uploadingFiles }}</div>
+                      </div>
+                    </v-card-row>
+                  </v-card-text>
+                  <v-card-row actions>
+                    <v-btn flat v-on:click.native="uploadingFiles">Uploading Files</v-btn>
+                  </v-card-row>
+                </v-card>
+
+
+
+                <v-card>
+                  <v-card-row>
+                    <v-card-title>
+                      <span>Logging In</span>
+                      <v-spacer></v-spacer>
+                    </v-card-title>
+                  </v-card-row>
+                  <v-card-text>
+                    <v-card-row>
+                      <v-icon class="mr-5">code</v-icon>
+                      <div>
+                        <div>/parse/users</div>
+                        <div>{{ body.loggingIn }}</div>
+                        <div>{{ response.loggingIn }}</div>
+                        <br>
+                        <v-text-input label="Username" v-model="body.loggingIn.username"></v-text-input>
+                        <v-text-input label="Password" v-model="body.loggingIn.password"></v-text-input>
+                      </div>
+                    </v-card-row>
+                  </v-card-text>
+                  <v-card-row actions>
+                    <v-btn flat v-on:click.native="loggingIn">Logging In</v-btn>
+                    <v-btn flat v-on:click.native="loggingInFacebook">Logging In Facebook</v-btn>
+                  </v-card-row>
+                </v-card>
+
+
+                <v-card>
+                  <v-card-row>
+                    <v-card-title>
+                      <span>Updating(PUT) Objects</span>
+                      <v-spacer></v-spacer>
+                    </v-card-title>
+                  </v-card-row>
+                  <v-card-text>
+                    <v-card-row>
+                      <v-icon class="mr-5">code</v-icon>
+                      <div>
+                        <div>/parse/classes/GameScore/{{ response.creatingObjects.objectId }}</div>
+                        <div>{{ body.updatingObjects }}</div>
+                        <div>{{ response.updatingObjects }}</div>
+                      </div>
+                    </v-card-row>
+                  </v-card-text>
+                  <v-card-row actions>
+                    <v-btn flat v-on:click.native="updatingObjects">Updating</v-btn>
+                  </v-card-row>
+                </v-card>
+
+
+
+                <v-card>
+                  <v-card-row>
+                    <v-card-title>
+                      <span>Deleting(PUT) Objects</span>
+                      <v-spacer></v-spacer>
+                    </v-card-title>
+                  </v-card-row>
+                  <v-card-text>
+                    <v-card-row>
+                      <v-icon class="mr-5">code</v-icon>
+                      <div>
+                        <div>/parse/classes/GameScore/{{ response.creatingObjects.objectId }}</div>
+                        <div>{{ body.deletingObjects }}</div>
+                        <div>{{ response.deletingObjects }}</div>
+                      </div>
+                    </v-card-row>
+                  </v-card-text>
+                  <v-card-row actions>
+                    <v-btn flat v-on:click.native="deletingObjects">Deleting</v-btn>
+                  </v-card-row>
+                </v-card>
+
+
+
+                <v-card>
+                  <v-card-row>
+                    <v-card-title>
+                      <span>Batch Operations</span>
+                      <v-spacer></v-spacer>
+                    </v-card-title>
+                  </v-card-row>
+                  <v-card-text>
+                    <v-card-row>
+                      <v-icon class="mr-5">code</v-icon>
+                      <div>
+                        <div>/parse/batch</div>
+                        <div>{{ body.batchOperations }}</div>
+                        <div>{{ response.batchOperations }}</div>
+                      </div>
+                    </v-card-row>
+                  </v-card-text>
+                  <v-card-row actions>
+                    <v-btn flat v-on:click.native="batchOperations">Batch</v-btn>
+                  </v-card-row>
+                </v-card>
+              </v-tab-content>
             </v-tabs>
 
 
@@ -528,7 +916,8 @@
           loggingIn: {
             username: "",
             password: "",
-          }
+          },
+          uploadingFiles: "Hello, World!"
         },
         response: {
           sayHello: {},
@@ -538,7 +927,8 @@
           deletingObjects: {},
           batchOperations: {},
           signingUp: {},
-          loggingIn: {}
+          loggingIn: {},
+          uploadingFiles: {}
         }
       },
       methods: {
@@ -695,6 +1085,19 @@
             }
           }, {
             scope: 'public_profile,email'
+          });
+        },
+        uploadingFiles: function () {
+          axios.post('/parse/files/hello.txt', this.body.uploadingFiles, {
+            headers: {
+              'Content-Type': 'text/plain'
+            }
+          })
+          .then(response => {
+            this.response.uploadingFiles = response.data;
+          })
+          .catch(error => {
+            this.response.uploadingFiles = error.response.data
           });
         }
       }
