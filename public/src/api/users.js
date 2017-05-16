@@ -16,14 +16,13 @@ export default {
     })
   },
   loggingIn: (username, password) => {
-    console.log(querystring.stringify({
-      username: username,
-      password: password
-    }))
     return instance.get('login?' + querystring.stringify({
       username: username,
       password: password
     }))
+  },
+  retrievingUsers: (objectId) => {
+    return instance.get('users/' + objectId)
   },
   retrievingCurrentUser: (sessionToken) => {
     return instance.get('users/me', {
