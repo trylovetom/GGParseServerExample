@@ -43,7 +43,7 @@ const actions = {
       commit(types.RETRIEVEING_USERS, err.response.data)
     }
   },
-  retrieveingCurrentUser: async ({ commit, state }, data) => {
+  retrieveingCurrentUser: async ({ commit, state }) => {
     try {
       const response = await users.retrieveingCurrentUser(state.sessionToken)
       commit(types.RETRIEVEING_CURRENT_USER, response.data)
@@ -67,6 +67,11 @@ const mutations = {
   },
   [types.RETRIEVEING_USERS]: (state, response) => {
     state.userResponse = response
+    state.userObjectId = response.objectId
+  },
+  [types.RETRIEVEING_CURRENT_USER]: (state, response) => {
+    state.userResponse = response
+    state.currentUser = response
     state.userObjectId = response.objectId
   }
 }
