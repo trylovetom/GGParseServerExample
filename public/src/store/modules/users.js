@@ -35,9 +35,17 @@ const actions = {
       commit(types.LOGGING_IN_USER, err.response.data)
     }
   },
-  retrievingCurrentUser: async ({ commit, state }, data) => {
+  retrieveingUsers: async ({ commit, state }) => {
     try {
-      const response = await users.retrievingCurrentUser(state.sessionToken)
+      const response = await users.retrieveingUsers(state.userObjectId)
+      commit(types.RETRIEVEING_USERS, response.data)
+    } catch (err) {
+      commit(types.RETRIEVEING_USERS, err.response.data)
+    }
+  },
+  retrieveingCurrentUser: async ({ commit, state }, data) => {
+    try {
+      const response = await users.retrieveingCurrentUser(state.sessionToken)
       commit(types.RETRIEVEING_CURRENT_USER, response.data)
     } catch (err) {
       commit(types.RETRIEVEING_CURRENT_USER, err.response.data)
@@ -56,6 +64,10 @@ const mutations = {
     state.userResponse = response
     state.userObjectId = response.objectId
     state.sessionToken = response.sessionToken
+  },
+  [types.RETRIEVEING_USERS]: (state, response) => {
+    state.userResponse = response
+    state.userObjectId = response.objectId
   }
 }
 

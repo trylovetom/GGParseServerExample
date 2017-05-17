@@ -16,16 +16,15 @@ export default {
     })
   },
   loggingIn: (username, password) => {
-    console.log(querystring.stringify({
-      username: username,
-      password: password
-    }))
     return instance.get('login?' + querystring.stringify({
       username: username,
       password: password
     }))
   },
-  retrievingCurrentUser: (sessionToken) => {
+  retrieveingUsers: (objectId) => {
+    return instance.get('users/' + objectId)
+  },
+  retrieveingCurrentUser: (sessionToken) => {
     return instance.get('users/me', {
       headers: {
         'X-Parse-Session-Token': sessionToken
