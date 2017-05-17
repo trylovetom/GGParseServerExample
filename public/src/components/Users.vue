@@ -25,10 +25,10 @@ import { mapGetters, mapActions } from 'vuex'
 
 export default {
   mounted: () => {
-    console.log(mapActions([
+    mapActions([
       'signingUp',
       'loggingIn'
-    ]))
+    ])
   },
   data: () => {
     return {
