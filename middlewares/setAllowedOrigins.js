@@ -10,7 +10,7 @@ module.exports = (options) => {
       res.setHeader('Access-Control-Allow-Origin', origin)
     }
     res.header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT, DELETE')
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, x-parse-application-id')
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Parse-Application-Id, X-Parse-Session-Token')
     res.header('Access-Control-Max-Age', '2592000') // 30 days(60 * 60 * 24 * 30 = 2592000)
     res.header('Access-Control-Allow-Credentials', true)
     if (req.method === 'OPTIONS') {
