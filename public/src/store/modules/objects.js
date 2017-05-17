@@ -23,9 +23,9 @@ const actions = {
       commit(types.CREATING_OBJECTS, err.response.data)
     }
   },
-  retrieveingObjects: async ({ commit, state }) => {
+  retrievingObjects: async ({ commit, state }) => {
     try {
-      const response = await objects.retrieveingObjects(state.objectId)
+      const response = await objects.retrievingObjects(state.objectId)
       commit(types.RETRIEVEING_OBJECTS, response.data)
     } catch (err) {
       commit(types.RETRIEVEING_OBJECTS, err.response.data)

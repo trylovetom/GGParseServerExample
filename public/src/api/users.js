@@ -21,10 +21,10 @@ export default {
       password: password
     }))
   },
-  retrieveingUsers: (objectId) => {
+  retrievingUsers: (objectId) => {
     return instance.get('users/' + objectId)
   },
-  retrieveingCurrentUser: (sessionToken) => {
+  retrievingCurrentUser: (sessionToken) => {
     return instance.get('users/me', {
       headers: {
         'X-Parse-Session-Token': sessionToken
