@@ -38,5 +38,12 @@ export default {
         'Content-Type': 'application/json'
       }
     })
+  },
+  deletingUsers: (objectId, sessionToken) => {
+    return instance.delete('/users/' + objectId, {
+      headers: {
+        'X-Parse-Session-Token': sessionToken
+      }
+    })
   }
 }

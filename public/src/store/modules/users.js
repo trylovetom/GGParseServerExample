@@ -58,6 +58,14 @@ const actions = {
     } catch (err) {
       commit(types.UPDATING_USERS, err.response.data)
     }
+  },
+  deletingUsers: async ({ commit, state }) => {
+    try {
+      const response = await users.deletingUsers(state.userObjectId, state.sessionToken)
+      commit(types.DELETING_USERS, response.data)
+    } catch (err) {
+      commit(types.DELETING_USERS, err.response.data)
+    }
   }
 }
 
@@ -85,6 +93,9 @@ const mutations = {
   [types.UPDATING_USERS]: (state, response) => {
     state.userResponse = response
     state.sessionToken = response.sessionToken
+  },
+  [types.DELETING_USERS]: (state, response) => {
+    state.userResponse = response
   }
 }
 
