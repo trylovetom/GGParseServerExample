@@ -13,7 +13,8 @@
     <button @click="loggingIn(userData)">Logging In</button>
     <button @click="retrievingUsers()">Retrieving</button>
     <button @click="retrievingCurrentUser()">Retrieving Current User</button>
-    <button @click="updatingUsers(userData)">Updating User</button>
+    <button @click="updatingUsers(userData)">Updating</button>
+    <button @click="deletingUsers()">Deleteing</button>
     <hr>
   </div>
 </template>
@@ -43,7 +44,8 @@ export default {
     'loggingIn',
     'retrievingUsers',
     'retrievingCurrentUser',
-    'updatingUsers'
+    'updatingUsers',
+    'deletingUsers'
   ])
 }
 </script>
