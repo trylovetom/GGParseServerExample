@@ -53,16 +53,10 @@ const actions = {
   },
   updatingUsers: async ({ commit, state }, data) => {
     try {
-      console.log('1')
       const response = await users.updatingUsers(state.userObjectId, state.sessionToken, data)
-      console.log('2')
       commit(types.UPDATING_USERS, response.data)
-      console.log('3')
     } catch (err) {
-      console.log('4')
-      console.log(err)
       commit(types.UPDATING_USERS, err.response.data)
-      console.log('5')
     }
   }
 }
