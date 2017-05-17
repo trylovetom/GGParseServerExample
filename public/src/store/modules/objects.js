@@ -26,9 +26,9 @@ const actions = {
   retrievingObjects: async ({ commit, state }) => {
     try {
       const response = await objects.retrievingObjects(state.objectId)
-      commit(types.RETRIEVEING_OBJECTS, response.data)
+      commit(types.RETRIEVING_OBJECTS, response.data)
     } catch (err) {
-      commit(types.RETRIEVEING_OBJECTS, err.response.data)
+      commit(types.RETRIEVING_OBJECTS, err.response.data)
     }
   },
   updatingObjects: async ({ commit, state }, data) => {
@@ -55,7 +55,7 @@ const mutations = {
     state.objectResponse = response
     state.objectId = response.objectId
   },
-  [types.RETRIEVEING_OBJECTS]: (state, response) => {
+  [types.RETRIEVING_OBJECTS]: (state, response) => {
     state.objectResponse = response
   },
   [types.UPDATING_OBJECTS]: (state, response) => {
