@@ -1,15 +1,17 @@
 <template>
   <div class="objects">
     <h1>Users({{ userObjectId }})</h1>
-    <h2>{ Session Token: "{{ sessionToken }}" }</h2>
+    <h2>Session Token: "{{ sessionToken }}"</h2>
+    <h2>Current User: {{ currentUser }}</h2>
     <h2>{{ userResponse }}</h2>
     <input type="text" placeholder="username" v-model="userData.username">
     <input type="password" placeholder="password" v-model="userData.password">
     <input type="email" placeholder="email" v-model="userData.email">
     <input type="phone" placeholder="phone" v-model="userData.phone">
-    <button @click="signingUp(userData)">SigningUp</button>
-    <button @click="loggingIn(userData)">LoggingIn</button>
+    <button @click="signingUp(userData)">Signing Up</button>
+    <button @click="loggingIn(userData)">Logging In</button>
     <button @click="retrievingUsers()">Retrieving</button>
+    <button @click="retrievingCurrentUser()">Retrieving Current User</button>
     <!-- <button @click="retrievingObjects()">Retrieving</button> -->
     <!-- <button @click="updatingObjects(updateData)">Updating</button> -->
     <!-- <button @click="deletingObjects()">Deleting</button> -->
@@ -22,10 +24,10 @@ import { mapGetters, mapActions } from 'vuex'
 
 export default {
   mounted: () => {
-    console.log(mapActions([
+    mapActions([
       'signingUp',
       'loggingIn'
-    ]))
+    ])
   },
   data: () => {
     return {
@@ -40,12 +42,14 @@ export default {
   computed: mapGetters({
     userResponse: 'userResponse',
     userObjectId: 'userObjectId',
-    sessionToken: 'sessionToken'
+    sessionToken: 'sessionToken',
+    currentUser: 'currentUser'
   }),
   methods: mapActions([
     'signingUp',
     'loggingIn',
-    'retrievingUsers'
+    'retrievingUsers',
+    'retrievingCurrentUser'
   ])
 }
 </script>
