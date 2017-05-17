@@ -10,9 +10,9 @@
     <input type="phone" placeholder="phone" v-model="userData.phone">
     <button @click="signingUp(userData)">Signing Up</button>
     <button @click="loggingIn(userData)">Logging In</button>
-    <button @click="retrieveingUsers()">Retrieveing</button>
-    <button @click="retrieveingCurrentUser()">Retrieveing Current User</button>
-    <!-- <button @click="retrieveingObjects()">Retrieveing</button> -->
+    <button @click="retrievingUsers()">Retrieving</button>
+    <button @click="retrievingCurrentUser()">Retrieving Current User</button>
+    <!-- <button @click="retrievingObjects()">Retrieving</button> -->
     <!-- <button @click="updatingObjects(updateData)">Updating</button> -->
     <!-- <button @click="deletingObjects()">Deleting</button> -->
     <hr>
@@ -48,8 +48,8 @@ export default {
   methods: mapActions([
     'signingUp',
     'loggingIn',
-    'retrieveingUsers',
-    'retrieveingCurrentUser'
+    'retrievingUsers',
+    'retrievingCurrentUser'
   ])
 }
 </script>

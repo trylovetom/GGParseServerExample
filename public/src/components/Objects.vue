@@ -4,7 +4,7 @@
     <h2>{{ data }}</h2>
     <h2>{{ objectResponse }}</h2>
     <button @click="creatingObjects(data)">Creating</button>
-    <button @click="retrieveingObjects()">Retrieveing</button>
+    <button @click="retrievingObjects()">Retrieving</button>
     <button @click="updatingObjects(updateData)">Updating</button>
     <button @click="deletingObjects()">Deleting</button>
     <hr>
@@ -33,7 +33,7 @@ export default {
   }),
   methods: mapActions([
     'creatingObjects',
-    'retrieveingObjects',
+    'retrievingObjects',
     'updatingObjects',
     'deletingObjects'
   ])
