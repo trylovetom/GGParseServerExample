@@ -8,13 +8,12 @@
     <input type="password" placeholder="password" v-model="userData.password">
     <input type="email" placeholder="email" v-model="userData.email">
     <input type="phone" placeholder="phone" v-model="userData.phone">
+    <br>
     <button @click="signingUp(userData)">Signing Up</button>
     <button @click="loggingIn(userData)">Logging In</button>
     <button @click="retrievingUsers()">Retrieving</button>
     <button @click="retrievingCurrentUser()">Retrieving Current User</button>
-    <!-- <button @click="retrievingObjects()">Retrieving</button> -->
-    <!-- <button @click="updatingObjects(updateData)">Updating</button> -->
-    <!-- <button @click="deletingObjects()">Deleting</button> -->
+    <button @click="updatingUsers(userData)">Updating User</button>
     <hr>
   </div>
 </template>
@@ -23,18 +22,12 @@
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
-  mounted: () => {
-    mapActions([
-      'signingUp',
-      'loggingIn'
-    ])
-  },
   data: () => {
     return {
       userData: {
         username: 'asdf',
         password: 'asdf',
-        email: 'asdf',
+        email: 'asdf@asdf.com',
         phone: 'asdf'
       }
     }
@@ -49,7 +42,8 @@ export default {
     'signingUp',
     'loggingIn',
     'retrievingUsers',
-    'retrievingCurrentUser'
+    'retrievingCurrentUser',
+    'updatingUsers'
   ])
 }
 </script>
