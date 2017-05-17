@@ -11,7 +11,7 @@ export default {
   creatingObjects: (data) => {
     return instance.post('', data)
   },
-  retrieveingObjects: (objectId) => {
+  retrievingObjects: (objectId) => {
     return instance.get(objectId)
   },
   updatingObjects: (objectId, data) => {
