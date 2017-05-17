@@ -30,5 +30,14 @@ export default {
         'X-Parse-Session-Token': sessionToken
       }
     })
+  },
+  updatingUsers: (objectId, sessionToken, data) => {
+    console.log(data)
+    return instance.put('users/' + objectId, data, {
+      headers: {
+        'X-Parse-Session-Token': sessionToken,
+        'Content-Type': 'application/json'
+      }
+    })
   }
 }
