@@ -38,17 +38,31 @@ const actions = {
   retrievingUsers: async ({ commit, state }) => {
     try {
       const response = await users.retrievingUsers(state.userObjectId)
-      commit(types.RETRIEVEING_USERS, response.data)
+      commit(types.RETRIEVING_USERS, response.data)
     } catch (err) {
-      commit(types.RETRIEVEING_USERS, err.response.data)
+      commit(types.RETRIEVING_USERS, err.response.data)
     }
   },
   retrievingCurrentUser: async ({ commit, state }) => {
     try {
       const response = await users.retrievingCurrentUser(state.sessionToken)
-      commit(types.RETRIEVEING_CURRENT_USER, response.data)
+      commit(types.RETRIEVING_CURRENT_USER, response.data)
     } catch (err) {
-      commit(types.RETRIEVEING_CURRENT_USER, err.response.data)
+      commit(types.RETRIEVING_CURRENT_USER, err.response.data)
+    }
+  },
+  updatingUsers: async ({ commit, state }, data) => {
+    try {
+      console.log('1')
+      const response = await users.updatingUsers(state.userObjectId, state.sessionToken, data)
+      console.log('2')
+      commit(types.UPDATING_USERS, response.data)
+      console.log('3')
+    } catch (err) {
+      console.log('4')
+      console.log(err)
+      commit(types.UPDATING_USERS, err.response.data)
+      console.log('5')
     }
   }
 }
@@ -65,14 +79,18 @@ const mutations = {
     state.userObjectId = response.objectId
     state.sessionToken = response.sessionToken
   },
-  [types.RETRIEVEING_USERS]: (state, response) => {
+  [types.RETRIEVING_USERS]: (state, response) => {
     state.userResponse = response
     state.userObjectId = response.objectId
   },
-  [types.RETRIEVEING_CURRENT_USER]: (state, response) => {
+  [types.RETRIEVING_CURRENT_USER]: (state, response) => {
     state.userResponse = response
     state.currentUser = response
     state.userObjectId = response.objectId
+  },
+  [types.UPDATING_USERS]: (state, response) => {
+    state.userResponse = response
+    state.sessionToken = response.sessionToken
   }
 }
 
